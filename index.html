@@ -7,9 +7,6 @@
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- JSZip para ler o arquivo .zip diretamente no navegador -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
   
   <!-- Font Awesome Icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
@@ -97,22 +94,6 @@
 </head>
 <body class="font-sans text-slate-700 bg-[#f8fbff] antialiased min-h-screen flex flex-col overflow-x-hidden">
 
-  <!-- BARRA INTELIGENTE PARA CARREGAR O ARQUIVO .ZIP OU FOTOS (RESPONSIVA NO CELULAR) -->
-  <div id="zip-helper-bar" class="fixed bottom-20 sm:bottom-5 left-3 right-3 sm:left-5 sm:right-auto z-40 sm:max-w-md bg-brand-900/95 backdrop-blur-md text-white p-3.5 sm:p-4 rounded-2xl shadow-2xl border border-brand-400/30 flex items-center gap-3 sm:gap-4 transition-all duration-300">
-    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-brand-600 flex items-center justify-center shrink-0">
-      <i class="fa-solid fa-file-zipper text-base sm:text-lg"></i>
-    </div>
-    <div class="text-xs leading-snug flex-grow min-w-0">
-      <p class="font-semibold text-xs sm:text-sm text-white truncate">Carregar fotos do Portfólio (.ZIP)</p>
-      <p class="text-brand-200 text-[11px] sm:text-xs line-clamp-2">Selecione seu arquivo <strong>.zip</strong> e fotos para inseri-las automaticamente.</p>
-    </div>
-    <label for="zip-file-input" class="cursor-pointer bg-white hover:bg-brand-50 active:scale-95 text-brand-900 font-semibold text-xs px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-xl shadow transition-all shrink-0">
-      Selecionar
-    </label>
-    <button onclick="document.getElementById('zip-helper-bar').classList.add('hidden')" class="text-brand-300 hover:text-white text-xl leading-none px-1.5 py-1" title="Fechar" aria-label="Fechar aviso">&times;</button>
-    <input type="file" id="zip-file-input" multiple accept=".zip,image/*" class="hidden">
-  </div>
-
   <!-- CABEÇALHO / NAVEGAÇÃO RESPONSIVA -->
   <header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -182,11 +163,11 @@
     <section id="inicio" class="relative min-h-[calc(100svh-4rem)] sm:min-h-[600px] lg:min-h-[660px] flex items-center justify-center text-center text-white overflow-hidden py-14 sm:py-20 px-4 sm:px-6">
       
       <div class="absolute inset-0 z-0 bg-slate-950">
-        <div class="hero-bg-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100 scale-105" data-bg="78920" style="background-image: url('78920_2.jpg');"></div>
-        <div class="hero-bg-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0 scale-105" data-bg="78922" style="background-image: url('78922.jpg');"></div>
-        <div class="hero-bg-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0 scale-105" data-bg="78923" style="background-image: url('78923.jpg');"></div>
-        <div class="hero-bg-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0 scale-105" data-bg="78926" style="background-image: url('78926.jpg');"></div>
-        <div class="hero-bg-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0 scale-105" data-bg="78927" style="background-image: url('78927.jpg');"></div>
+        <div class="hero-bg-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100 scale-105" style="background-image: url('78921.jpg');"></div>
+        <div class="hero-bg-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0 scale-105" style="background-image: url('78922.jpg');"></div>
+        <div class="hero-bg-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0 scale-105" style="background-image: url('78923.jpg');"></div>
+        <div class="hero-bg-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0 scale-105" style="background-image: url('78926.jpg');"></div>
+        <div class="hero-bg-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0 scale-105" style="background-image: url('78927.jpg');"></div>
         
         <div class="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-brand-950/75 to-slate-950/90 backdrop-blur-[1px]"></div>
       </div>
@@ -234,7 +215,7 @@
           <!-- CARD 1: CASAMENTOS -->
           <div class="group bg-white rounded-3xl p-5 sm:p-7 shadow-card-clean hover:shadow-card-hover hover:-translate-y-1.5 transition-all duration-300 flex flex-col border border-slate-100">
             <div class="overflow-hidden rounded-2xl mb-5 sm:mb-6 aspect-[16/10] sm:h-52 bg-slate-200 relative">
-              <img data-foto="78922" src="78922.jpg" alt="Casamento - Oliveira Storymaker" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <img src="78922.jpg" alt="Casamento - Oliveira Storymaker" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <span class="absolute bottom-3 left-3 bg-brand-950/75 text-white text-xs px-2.5 py-1 rounded-full backdrop-blur-sm">Casamentos</span>
             </div>
 
@@ -255,7 +236,7 @@
           <!-- CARD 2: ANIVERSÁRIOS -->
           <div class="group bg-white rounded-3xl p-5 sm:p-7 shadow-card-clean hover:shadow-card-hover hover:-translate-y-1.5 transition-all duration-300 flex flex-col border border-slate-100">
             <div class="overflow-hidden rounded-2xl mb-5 sm:mb-6 aspect-[16/10] sm:h-52 bg-slate-200 relative">
-              <img data-foto="78923" src="78923.jpg" alt="Aniversário - Oliveira Storymaker" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <img src="78923.jpg" alt="Aniversário - Oliveira Storymaker" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <span class="absolute bottom-3 left-3 bg-brand-950/75 text-white text-xs px-2.5 py-1 rounded-full backdrop-blur-sm">Aniversários</span>
             </div>
 
@@ -280,7 +261,7 @@
           <!-- CARD 3: COBERTURA DE EVENTOS -->
           <div class="group bg-white rounded-3xl p-5 sm:p-7 shadow-card-clean hover:shadow-card-hover hover:-translate-y-1.5 transition-all duration-300 flex flex-col border border-slate-100 md:col-span-2 lg:col-span-1 md:max-w-md md:mx-auto lg:max-w-none w-full">
             <div class="overflow-hidden rounded-2xl mb-5 sm:mb-6 aspect-[16/10] sm:h-52 bg-slate-200 relative">
-              <img data-foto="78926" src="78926.jpg" alt="Cobertura de Eventos - Oliveira Storymaker" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <img src="78926.jpg" alt="Cobertura de Eventos - Oliveira Storymaker" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <span class="absolute bottom-3 left-3 bg-brand-950/75 text-white text-xs px-2.5 py-1 rounded-full backdrop-blur-sm">Eventos Gerais</span>
             </div>
 
@@ -303,12 +284,11 @@
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-14 items-center">
           
-          <!-- Foto da Isabelle (78921_2.jpg) adaptável em celular, tablet e desktop -->
+          <!-- Foto da Isabelle adaptável -->
           <div class="lg:col-span-5 flex justify-center">
             <div class="relative w-full max-w-[290px] xs:max-w-[330px] sm:max-w-[370px] aspect-[4/5] rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-brand-950 group">
               <img id="foto-isabelle"
-                data-foto="78921"
-                src="78921_2.jpg" 
+                src="78921.jpg" 
                 alt="Isabelle Oliveira - Fotógrafa & Storymaker" 
                 class="w-full h-full object-cover object-left">
               <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-brand-950/95 via-brand-950/50 to-transparent p-4 sm:p-5 text-white">
@@ -318,7 +298,7 @@
             </div>
           </div>
 
-          <!-- Texto do Perfil Original -->
+          <!-- Texto do Perfil -->
           <div class="lg:col-span-7 space-y-4 sm:space-y-5 text-center lg:text-left">
             <span class="text-brand-600 font-semibold text-xs sm:text-sm uppercase tracking-wider block">Quem está por trás das lentes</span>
             <h2 class="text-2xl xs:text-3xl sm:text-4xl font-serif font-bold text-brand-900 tracking-tight leading-snug sm:leading-tight">
@@ -342,7 +322,7 @@
       </div>
     </section>
 
-    <!-- GALERIA DO PORTFÓLIO REAL (IMAGENS DO ARQUIVO .ZIP) -->
+    <!-- GALERIA DO PORTFÓLIO -->
     <section id="portfolio" class="py-14 sm:py-20 lg:py-24 bg-[#f8fbff]">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -360,7 +340,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           
           <div class="group relative rounded-2xl overflow-hidden shadow-card-clean bg-slate-200 aspect-video cursor-pointer" onclick="abrirFoto(this.querySelector('img').src)">
-            <img data-foto="78922" src="78922.jpg" alt="Casamentos e Conexão" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <img src="78922.jpg" alt="Casamentos e Conexão" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-brand-950/85 via-brand-950/20 to-transparent opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end text-white">
               <span class="text-[11px] sm:text-xs text-brand-300 font-medium">Casamento</span>
               <p class="font-medium text-xs sm:text-sm">Propósito, sentimento e conexão</p>
@@ -368,7 +348,7 @@
           </div>
 
           <div class="group relative rounded-2xl overflow-hidden shadow-card-clean bg-slate-200 aspect-video cursor-pointer" onclick="abrirFoto(this.querySelector('img').src)">
-            <img data-foto="78923" src="78923.jpg" alt="Aniversário de 16 Anos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <img src="78923.jpg" alt="Aniversário de 16 Anos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-brand-950/85 via-brand-950/20 to-transparent opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end text-white">
               <span class="text-[11px] sm:text-xs text-brand-300 font-medium">Aniversários</span>
               <p class="font-medium text-xs sm:text-sm">Comemoração e detalhes</p>
@@ -376,7 +356,7 @@
           </div>
 
           <div class="group relative rounded-2xl overflow-hidden shadow-card-clean bg-slate-200 aspect-video cursor-pointer" onclick="abrirFoto(this.querySelector('img').src)">
-            <img data-foto="78924" src="78924.jpg" alt="Eventos e Formaturas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <img src="78924.jpg" alt="Eventos e Formaturas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-brand-950/85 via-brand-950/20 to-transparent opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end text-white">
               <span class="text-[11px] sm:text-xs text-brand-300 font-medium">Coberturas</span>
               <p class="font-medium text-xs sm:text-sm">Emoção e sorrisos sinceros</p>
@@ -384,7 +364,7 @@
           </div>
 
           <div class="group relative rounded-2xl overflow-hidden shadow-card-clean bg-slate-200 aspect-video cursor-pointer" onclick="abrirFoto(this.querySelector('img').src)">
-            <img data-foto="78925" src="78925.jpg" alt="Ensaios e Aniversários Infantis" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <img src="78925.jpg" alt="Ensaios e Aniversários Infantis" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-brand-950/85 via-brand-950/20 to-transparent opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end text-white">
               <span class="text-[11px] sm:text-xs text-brand-300 font-medium">Ensaios</span>
               <p class="font-medium text-xs sm:text-sm">Momentos que encantam</p>
@@ -392,7 +372,7 @@
           </div>
 
           <div class="group relative rounded-2xl overflow-hidden shadow-card-clean bg-slate-200 aspect-video cursor-pointer" onclick="abrirFoto(this.querySelector('img').src)">
-            <img data-foto="78926" src="78926.jpg" alt="Formatura de Direito" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <img src="78926.jpg" alt="Formatura de Direito" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-brand-950/85 via-brand-950/20 to-transparent opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end text-white">
               <span class="text-[11px] sm:text-xs text-brand-300 font-medium">Formaturas</span>
               <p class="font-medium text-xs sm:text-sm">Conquistas inesquecíveis</p>
@@ -400,7 +380,7 @@
           </div>
 
           <div class="group relative rounded-2xl overflow-hidden shadow-card-clean bg-slate-200 aspect-video cursor-pointer" onclick="abrirFoto(this.querySelector('img').src)">
-            <img data-foto="78927" src="78927.jpg" alt="Ensaio Externo ao Pôr do Sol" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <img src="78927.jpg" alt="Ensaio Externo ao Pôr do Sol" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-brand-950/85 via-brand-950/20 to-transparent opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end text-white">
               <span class="text-[11px] sm:text-xs text-brand-300 font-medium">Ensaio Pessoal</span>
               <p class="font-medium text-xs sm:text-sm">Luz natural e autenticidade</p>
@@ -626,167 +606,6 @@
   <script>
     document.getElementById('ano-atual').textContent = new Date().getFullYear();
 
-    // 1. BANCO DE DADOS LOCAL DO NAVEGADOR (SALVA AS FOTOS DO .ZIP PERMANENTEMENTE)
-    const DB_NAME = 'OliveiraStorymakerDB';
-    const STORE_NAME = 'portfolio_imagens';
-
-    function abrirDB() {
-      return new Promise((resolve, reject) => {
-        const req = indexedDB.open(DB_NAME, 1);
-        req.onupgradeneeded = (e) => {
-          const db = e.target.result;
-          if (!db.objectStoreNames.contains(STORE_NAME)) {
-            db.createObjectStore(STORE_NAME);
-          }
-        };
-        req.onsuccess = () => resolve(req.result);
-        req.onerror = () => reject(req.error);
-      });
-    }
-
-    async function salvarImagemDB(chave, dataUrl) {
-      try {
-        const db = await abrirDB();
-        const tx = db.transaction(STORE_NAME, 'readwrite');
-        tx.objectStore(STORE_NAME).put(dataUrl, chave);
-      } catch (e) {}
-    }
-
-    async function obterImagemDB(chave) {
-      try {
-        const db = await abrirDB();
-        return await new Promise((resolve) => {
-          const tx = db.transaction(STORE_NAME, 'readonly');
-          const req = tx.objectStore(STORE_NAME).get(chave);
-          req.onsuccess = () => resolve(req.result || null);
-          req.onerror = () => resolve(null);
-        });
-      } catch (e) {
-        return null;
-      }
-    }
-
-    function aplicarImagemNaPagina(idBase, urlOuData) {
-      document.querySelectorAll(`img[data-foto="${idBase}"]`).forEach(img => {
-        img.src = urlOuData;
-      });
-      document.querySelectorAll(`.hero-bg-slide[data-bg="${idBase}"]`).forEach(div => {
-        div.style.backgroundImage = `url("${urlOuData}")`;
-      });
-    }
-
-    // 2. BUSCADOR AUTOMÁTICO DE CAMINHOS LOCAIS
-    function gerarCaminhosCandidatos(idBase) {
-      const nomes = [
-        `${idBase}_2.jpg`,
-        `${idBase} (1).jpg`,
-        `${idBase} (2).jpg`,
-        `${idBase}.jpg`,
-        `${idBase}_2.jpeg`,
-        `${idBase} (1).jpeg`,
-        `${idBase}.jpeg`,
-        `${idBase}_2.png`,
-        `${idBase} (1).png`,
-        `${idBase}.png`
-      ];
-      const pastas = [
-        '',
-        '../Downloads/',
-        '/home/usuario/Downloads/',
-        '/home/usuario/Área de Trabalho/',
-        '../Transferências/',
-        '/home/usuario/Transferências/'
-      ];
-      const lista = [];
-      pastas.forEach(pasta => {
-        nomes.forEach(nome => {
-          lista.push(pasta + nome);
-        });
-      });
-      return lista;
-    }
-
-    async function inicializarImagens() {
-      const ids = ['78920', '78921', '78922', '78923', '78924', '78925', '78926', '78927'];
-      let carregadas = 0;
-
-      for (const id of ids) {
-        const salva = await obterImagemDB(id);
-        if (salva) {
-          aplicarImagemNaPagina(id, salva);
-          carregadas++;
-          continue;
-        }
-
-        const candidatos = gerarCaminhosCandidatos(id);
-        for (const caminho of candidatos) {
-          const ok = await new Promise(res => {
-            const img = new Image();
-            img.onload = () => res(true);
-            img.onerror = () => res(false);
-            img.src = caminho;
-          });
-          if (ok) {
-            aplicarImagemNaPagina(id, caminho);
-            carregadas++;
-            break;
-          }
-        }
-      }
-
-      if (carregadas >= 6) {
-        document.getElementById('zip-helper-bar').classList.add('hidden');
-      }
-    }
-
-    inicializarImagens();
-
-    // 3. EXTRATOR AUTOMÁTICO DO ARQUIVO .ZIP E IMAGENS SELECIONADAS
-    const zipInput = document.getElementById('zip-file-input');
-    zipInput.addEventListener('change', async (e) => {
-      const files = Array.from(e.target.files);
-      if (!files.length) return;
-
-      for (const file of files) {
-        if (file.name.toLowerCase().endsWith('.zip') && window.JSZip) {
-          try {
-            const zip = await JSZip.loadAsync(file);
-            for (const [relativePath, zipEntry] of Object.entries(zip.files)) {
-              if (zipEntry.dir) continue;
-              const match = relativePath.match(/(7892[0-7])/);
-              if (match) {
-                const id = match[1];
-                const base64 = await zipEntry.async('base64');
-                const ext = relativePath.toLowerCase().endsWith('.png') ? 'image/png' : 'image/jpeg';
-                const dataUrl = `data:${ext};base64,${base64}`;
-                await salvarImagemDB(id, dataUrl);
-                aplicarImagemNaPagina(id, dataUrl);
-              }
-            }
-          } catch (err) {
-            console.error('Erro ao ler o ZIP:', err);
-          }
-        } else if (file.type.startsWith('image/')) {
-          const match = file.name.match(/(7892[0-7])/);
-          const reader = new FileReader();
-          reader.onload = async (ev) => {
-            const dataUrl = ev.target.result;
-            if (match) {
-              const id = match[1];
-              await salvarImagemDB(id, dataUrl);
-              aplicarImagemNaPagina(id, dataUrl);
-            } else {
-              await salvarImagemDB('78921', dataUrl);
-              aplicarImagemNaPagina('78921', dataUrl);
-            }
-          };
-          reader.readAsDataURL(file);
-        }
-      }
-
-      document.getElementById('zip-helper-bar').classList.add('hidden');
-    });
-
     // Menu Mobile com fechamento automático ao clicar fora ou redimensionar a tela
     const menuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -893,12 +712,19 @@
         }
       }
 
-      const mensagem = `Olá, Oliveira Storymaker! Gostaria de agendar um serviço:\n\n` +
-        `👤 *Nome:* ${nome}\n` +
-        `📱 *Contato:* ${telefone}\n` +
-        `🎉 *Evento:* ${tipo}\n` +
-        `📅 *Data Pretendida:* ${dataFormatada}\n` +
-        (horario ? `⏰ *Horário/Período:* ${horario}\n` : '') +
+      const mensagem = `Olá, Oliveira Storymaker! Gostaria de agendar um serviço:
+
+` +
+        `👤 *Nome:* ${nome}
+` +
+        `📱 *Contato:* ${telefone}
+` +
+        `🎉 *Evento:* ${tipo}
+` +
+        `📅 *Data Pretendida:* ${dataFormatada}
+` +
+        (horario ? `⏰ *Horário/Período:* ${horario}
+` : '') +
         (detalhes ? `📝 *Observações:* ${detalhes}` : '');
 
       const numeroWhatsApp = "558587961132";
